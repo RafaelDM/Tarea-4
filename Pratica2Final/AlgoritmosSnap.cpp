@@ -16,12 +16,12 @@ Complejidad de crear Vertice O(1)
 Complejidad de borrar Vertice O(m+n)
 Complejidad de crear Aristas O(1)
 Complejidad de borrar Aristas O(1)
-Complejidad de DFS O(m+n)
-Complejidad de BFS O(m+n)
-Complejidad de Dijkstra O(n log n)
-Complejidad de Prim O(n log n)
-Complejidad de Kruskal O(n log n)
-Complejidad de Floyd Warshall O(n^3)
+Complejidad de DFS O(m+n) Este algoritmo utiliza una tecnica Branch and bound
+Complejidad de BFS O(m+n) Este algoritmo utiliza una tecnica Branch and bound
+Complejidad de Dijkstra O(n log n) Este algoritmo utiliza una tecnica Avida
+Complejidad de Prim O(n log n) Este algoritmo utiliza una tecnica Avida
+Complejidad de Kruskal O(n log n) Este algoritmo utiliza una tecnica Avida
+Complejidad de Floyd Warshall O(n^3) Este algoritmo utiliza una tecnica de programacion dinamica
 */
 #include <iostream>
 #include <fstream>
