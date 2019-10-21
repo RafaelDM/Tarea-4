@@ -1,5 +1,5 @@
 /*
-David Benjamon Ruiz Salazar
+David Benjamon Ruiz Salazar A01020825
 Rafael Díaz Medina A01024592
 
 Para poder correr este programa en Windows se necesitaron de muchos pasos pero como se 
