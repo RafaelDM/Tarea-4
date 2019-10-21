@@ -1,6 +1,6 @@
 /*
 Rafael Díaz Medina A01024592
-David Benjamin Ruis Salazar A01020825
+David Benjamin Ruiz A01020825
 https://www.boost.org/doc/libs/1_55_0/libs/graph/example/
 https://www.boost.org/doc/libs/1_55_0/libs/graph/example/dfs-example.cpp
 https://www.boost.org/doc/libs/1_55_0/libs/graph/example/kruskal-example.cpp
@@ -93,7 +93,7 @@ public:
 		return;
 	}
 };
-
+	//Complejidad del Algoritmo: O(1)
 	Grafo crearVertices(Grafo p,int vertex){
 		vertex_t u;
 		u= crear_vertice(p);
@@ -102,37 +102,43 @@ public:
 		return p;
 	}
 
+	//Complejidad del Algoritmo: O(1)
 	Grafo crearAristas(Grafo p, int sale, int entra, int peso){
 		crear_aristas(sale, entra, peso, p);
 		std::cout << "Se puso la arista de " << sale << " a " << entra << "\n";
 		return p;
 	}
 
+	//Complejidad del Algoritmo: O(1)
 	Grafo borrarArista(Grafo p, int sale, int entra){
 		borrar_arista(sale, entra, p);
 		std::cout << "Se removio la arista de " << sale << " a " << entra << "\n";
 		return p;
 	}
 
+	//Complejidad del Algoritmo: O(1)
 	Grafo borrarVertice(Grafo p, int u){
 		clear_vertex(u,p);
 		borrar_vertice(u, p);
 		std::cout << "Se ha removido el vertice " << u; 
 		return p;
 	}
-
+	//Complejidad del Algoritmo: O(M+N)
+	//Este algoritmo utiliza una tecnica Branch and bound
 	void DFS(Grafo p){
 		dfsVisitor temp;
 		std::cout << "DFS: \n";
 		depth_first_search(p, visitor(temp));
 	}
-
+	//Complejidad del Algoritmo: O(M+N)
+	//Este algoritmo utiliza una tecnica Branch and bound
 	void BFS(Grafo p, int inicio){
 		bfsVisitor temp;
 		std::cout << "BFS: \n";
 		breadth_first_search(p,inicio, visitor(temp));
 	}
-
+	//Complejidad del Algoritmo: O(N^2)
+	//Este algoritmo utiliza una tecnica Avida
 	void dijsktra(Grafo n){
 		std::vector<vertex_t> p(num_vertices(n));
 		std::vector<int> d(num_vertices(n));
@@ -149,7 +155,8 @@ public:
 				endl;
 		}
 	}
-
+	//Complejidad del Algoritmo: O(N Log(M))
+	//Este algoritmo utiliza una tecnica Avido
 	void prim(Grafo p){
 		std::vector<vertex_t> v(num_vertices(p));
 		property_map<Grafo, vertex_index_t>::type indexmap = get(vertex_index, p);
@@ -167,7 +174,8 @@ public:
 			}
 		}
 	}
-
+	//Complejidad del Algoritmo: O(N Log(N))
+	//Este algoritmo utiliza una tecnica Avido
 	void kruskal(Grafo p){
 		property_map < Grafo, edge_weight_t >::type weight = get(edge_weight, p);
 		std::vector < Edge > spanning_tree;
@@ -177,7 +185,8 @@ public:
 			std::cout << source(*ei, p) << " <--> " << target(*ei, p)<< " con peso " << weight[*ei] << std::endl;
 		}
 	}
-
+	//Complejidad del Algoritmo: O(N^3)
+	//Este algoritmo utiliza una tecnica de programacion dinamica
 	void floydWarshall(Grafo p){
 		DistanceMatrix distancias(num_vertices(p));
 		DistanceMatrixMap dm(distancias, p);
